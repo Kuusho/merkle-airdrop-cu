@@ -15,6 +15,7 @@ contract DeployMerkleAirdrop is Script{
         vm.startBroadcast();
         lockInToken = new LockInToken();
         merkleAirdrop = new MerkleAirdrop(root, lockInToken);
+        lockInToken.transferOwnership(msg.sender);
         vm.stopBroadcast();
         return (lockInToken, merkleAirdrop);
     }
