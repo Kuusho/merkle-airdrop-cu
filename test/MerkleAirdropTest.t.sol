@@ -12,9 +12,9 @@ contract MerkleAirdropTest is Test{
     LockInToken public lockInToken;
     DeployMerkleAirdrop public deployer;
 
-    bytes32 public constant ROOT_HASH = 0x7233ce664db632afc791a028febd2fd0fe5bd13bc8641464ff861895f971f4f5;
+    bytes32 public constant ROOT_HASH = 0x18f83611f6b600e7a43e9f3c3a81d79d0e67d558c916513c61e698527ec9ba26;
     bytes32 public proofOne = 0x2b51471ad936d66836d49428a3f4752c73d6647184315fee76e25263d39c3be6;
-    bytes32 public proofTwo = 0xe5ebd1e1b5a5478a944ecab36a9a954ac3b6b8216875f6524caa7a1d87096576;
+    bytes32 public proofTwo = 0x1edd0cfd83a081e9b0157fcfd2f10e8de65d133c9750b8cb0f68393460197a26;
     bytes32[] public proof = [proofOne , proofTwo];
 
     uint256 public constant CLAIM_AMOUNT = 25 * 1e18;
@@ -54,7 +54,7 @@ contract MerkleAirdropTest is Test{
         // Timo signs message
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(timoPrivKey, digest);
 
-        // Grey claims
+        // Grey (or anyone) claims for Timo
         vm.prank(grey);
         merkleAirdrop.claim(timo, CLAIM_AMOUNT, proof, v, r, s);
 

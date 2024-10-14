@@ -10,7 +10,7 @@ import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
 contract DeployMerkleAirdrop is Script{
     LockInToken lockInToken;
     MerkleAirdrop merkleAirdrop;
-    bytes32 private constant ROOT = 0x7233ce664db632afc791a028febd2fd0fe5bd13bc8641464ff861895f971f4f5;
+    bytes32 private constant ROOT = 0x18f83611f6b600e7a43e9f3c3a81d79d0e67d558c916513c61e698527ec9ba26;
     uint256 public s_amountToTransfer = 4 * 25 * 1e18;
 
     function _deployMerkleAirdrop() internal returns(MerkleAirdrop, LockInToken) {
