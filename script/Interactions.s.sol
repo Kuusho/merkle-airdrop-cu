@@ -6,7 +6,7 @@ import {Script} from "forge-std/Script.sol";
 import {DevOpsTools} from "foundry-devops/src/DevOpsTools.sol";
 import {MerkleAirdrop} from "../src/MerkleAirdrop.sol";
 
-contract ClaimAidrop is Script{
+contract ClaimAirdrop is Script{
 
     error __ClaimAirdrop__InvalidSignatureLength();
 
